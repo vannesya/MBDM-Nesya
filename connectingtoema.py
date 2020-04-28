@@ -1,16 +1,16 @@
 from ema_workbench import Model, RealParameter, TimeSeriesOutcome, ArrayOutcome, ScalarOutcome
 
-model = Model('LakeProblem', function=lake_problem)
-
-model.uncertainties = [RealParameter('b', 0.1, 0.45), RealParameter('mean', 0.01, 0.05), 
-                       RealParameter('stdev', 0.001, 0.005), RealParameter('delta', 0.93, 0.99), 
-                       RealParameter('q', 2, 4.5)]
-model.levers =  [RealParameter('l0', 0.0, 0.1),RealParameter('l36', 0.0, 0.1),RealParameter('l72', 0.0, 0.1),
-                 RealParameter('l1', 0.0, 0.1),RealParameter('l37', 0.0, 0.1),RealParameter('l73', 0.0, 0.1),
-                 RealParameter('l2', 0.0, 0.1),RealParameter('l38', 0.0, 0.1),RealParameter('l74', 0.0, 0.1),
-                 RealParameter('l3', 0.0, 0.1),RealParameter('l39', 0.0, 0.1),RealParameter('l75', 0.0, 0.1),
-                 RealParameter('l4', 0.0, 0.1),RealParameter('l40', 0.0, 0.1),RealParameter('l76', 0.0, 0.1),
-                       RealParameter('l5', 0.0, 0.1),RealParameter('l41', 0.0, 0.1),RealParameter('l77', 0.0, 0.1),
+def definemodel(modelname, modelfunction):
+    model = Model(modelname, function=modelfunction)
+    model.uncertainties = [RealParameter('b', 0.1, 0.45), RealParameter('mean', 0.01, 0.05),
+                           RealParameter('stdev', 0.001, 0.005), RealParameter('delta', 0.93, 0.99),
+                           RealParameter('q', 2, 4.5)]
+    model.levers =  [RealParameter('l0', 0.0, 0.1),RealParameter('l36', 0.0, 0.1),RealParameter('l72', 0.0, 0.1),
+                     RealParameter('l1', 0.0, 0.1),RealParameter('l37', 0.0, 0.1),RealParameter('l73', 0.0, 0.1),
+                     RealParameter('l2', 0.0, 0.1),RealParameter('l38', 0.0, 0.1),RealParameter('l74', 0.0, 0.1),
+                     RealParameter('l3', 0.0, 0.1),RealParameter('l39', 0.0, 0.1),RealParameter('l75', 0.0, 0.1),
+                     RealParameter('l4', 0.0, 0.1),RealParameter('l40', 0.0, 0.1),RealParameter('l76', 0.0, 0.1),
+                     RealParameter('l5', 0.0, 0.1),RealParameter('l41', 0.0, 0.1),RealParameter('l77', 0.0, 0.1),
                        RealParameter('l6', 0.0, 0.1),RealParameter('l42', 0.0, 0.1),RealParameter('l78', 0.0, 0.1),
                        RealParameter('l7', 0.0, 0.1),RealParameter('l43', 0.0, 0.1),RealParameter('l79', 0.0, 0.1),
                        RealParameter('l8', 0.0, 0.1),RealParameter('l44', 0.0, 0.1),RealParameter('l80', 0.0, 0.1),
@@ -42,4 +42,4 @@ model.levers =  [RealParameter('l0', 0.0, 0.1),RealParameter('l36', 0.0, 0.1),Re
                        RealParameter('l34', 0.0, 0.1),RealParameter('l70', 0.0, 0.1),
                        RealParameter('l35', 0.0, 0.1),RealParameter('l71', 0.0, 0.1)] 
 
-model.outcomes = [ScalarOutcome('max_P'), ScalarOutcome('utility'), ScalarOutcome('inertia'), ScalarOutcome('reliability')]
+    model.outcomes = [ScalarOutcome('max_P'), ScalarOutcome('utility'), ScalarOutcome('inertia'), ScalarOutcome('reliability')]
