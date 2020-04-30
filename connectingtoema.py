@@ -43,3 +43,4 @@ def definemodel(modelname, modelfunction):
                        RealParameter('l35', 0.0, 0.1),RealParameter('l71', 0.0, 0.1)] 
 
     model.outcomes = [ScalarOutcome('max_P'), ScalarOutcome('utility'), ScalarOutcome('inertia'), ScalarOutcome('reliability')]
+    return model
